@@ -10,7 +10,6 @@ Dalam rangka mendukung pengambilan keputusan yang lebih baik dan berbasis data, 
 
 ### Permasalahan Bisnis
 Berikut adalah permasalahan bisnis yang ingin diselesaikan:
-
 1. Tingginya Angka Dropout
     Banyak siswa tidak menyelesaikan pendidikannya, yang berdampak buruk pada reputasi dan kualitas akademik institusi.
 2. Kebutuhan Deteksi Dini Siswa Berisiko Dropout
@@ -30,9 +29,7 @@ Proyek ini bertujuan untuk membantu **Jaya Jaya Institut** dalam menurunkan ting
 - Menyusun rekomendasi berbasis data untuk pengambilan keputusan.
 
 ### Persiapan
-
 **Sumber Data:**  
-
 Dataset yang digunakan dalam proyek ini dapat diakses melalui tautan berikut:  
 [Students Performance Data - Dicoding Dataset](https://github.com/dicodingacademy/dicoding_dataset/blob/main/students_performance/data.csv)
 
@@ -44,6 +41,17 @@ D:
 cd D:\DSExpert-JJI
 pip install -r requirements.txt 
 ```
+Setup environment: Shell/Terminal
+```
+D:
+cd D:\DSExpert-JJI
+python -m venv stud_jji
+.\stud_jji\Scripts\Activate.ps1
+pip install -r requirements.txt
+pip install ipykernel==6.29.3 pyzmq==25.1.2
+python -m ipykernel install --user --name=stud_jji
+pip install notebook jupyter ipykernel
+```
 
 ## Business Dashboard
 Dashboard dibuat dengan menggunakan Google Looker Studio untuk menampilkan distribusi data dan pengaruh variabel-variabel data terhadap Student Performance. Dashboard dapat diakses pada link berikut ini:
@@ -53,18 +61,49 @@ https://lookerstudio.google.com/s/hfrI8pmx_RM
 ![ichaa_agni-dashboard](https://github.com/IchaAgni/Students-Performance/blob/main/ichaa_agni-dashboard.jpg)
 
 ## Menjalankan Sistem Machine Learning
-*Prototype* Sistem *Machine Learning* ini dibuat dengan *Streamlit* yang dapat diakses pada *link* berikut ini:
+*Prototype* Sistem *Machine Learning* ini dibuat dengan menggunakan **Streamlit** dan telah di-*deploy* secara online agar dapat diakses oleh siapa saja tanpa perlu menginstal aplikasi secara lokal. Berikut *link* atau *tautan*  untuk mengakses prototype sistem mchine lerning students-performance JJI (Jaya-Jaya Institute) :
 ```
-<<<<<<< HEAD
+https://studperform-jjiagniicha211.streamlit.app/
+```
+Bisa juga diakses melalui *link* berikut ini :
+```
 http://194.233.88.134:3005/
 ```
+![ichaa_agni-streamlit](https://github.com/IchaAgni/StudPerform/blob/main/ichaa_agni-streamlit.jpg?raw=true)
 
 
-=======
-```
+### 🧭 Langkah Penggunaan:
+1. Buka tautan aplikasi di atas menggunakan browser.
+2. Isi setiap bagian dari form input sesuai dengan penjelasan pada tabel berikut:
+   
+---
+### 🧾 Langkah-langkah Input Data
 
->>>>>>> 9bc07568c98c9290f4855001623e8dfa22ad5e72
+| **Field**                      | **Deskripsi**                                                                 |
+|-------------------------------|------------------------------------------------------------------------------|
+| **Course**                     | Jurusan/program studi mahasiswa.                                             |
+| **Daytime/Evening Attendance** | Pilih apakah mahasiswa hadir di siang hari (kelas siang) atau malam (kelas malam).                      |
+| **Gender**     | Jenis kelamin mahasiswa.                                      |
+| **Age** | Usia mahasiswa.                          |
+| **Displaced**                | Apakah mahasiswa mengalami kondisi khusus atau terdampak.                                                  |
+| **Debtor**     | Apakah mahasiswa punya hutang ke kampus.                                       |
+| **Scholarsip Holder**     | Apakah mahasiswa menerima beasiswa.                                      |
+| **Dan seterusnya...**          |
+
+> Setelah semua data diisi, akan muncul tombol untuk mendapatkan hasil **prediksi status mahasiswa**.
+---
+
+## 🧠 Output yang Akan Ditampilkan
+Setelah seluruh input diberikan:
+1. Model akan memproses data yang telah dimasukkan.
+2. Status mahasiswa akan ditampilkan sebagai hasil prediksi, berupa:
+   - `Graduated`
+   - `Dropout`
+---
+Sistem ini secara otomatis menjalankan model machine learning yang telah dilatih sebelumnya dan menampilkan hasil analisis secara **interaktif** langsung di browser.
+
 ## Conclusion
+Proyek ini bertujuan untuk menganalisis data mahasiswa berdasarkan status akademik, kelompok usia, jurusan, dan nilai rata-rata semester. Berdasarkan visualisasi dalam **Student Performance Dashboard Analytic**, ditemukan beberapa temuan penting:
 - Komposisi siswa terdiri dari 66% Laki-laki dan 34% Perempuan dengan distribusi usia tertinggi pada rentang 17-23 tahun.
 - Tingkat kelulusan siswa (Graduation Rate) sebesar 60.85%% sedangkan tingkat ketidaklulusan (Dropout Rate) sebesar 39,14% dari 3.630 siswa
 - Tingkat ketidaklulusan cukup seimbang antara siswa Laki-laki (19.83%) dan siswa Perempuan (19.31%)
@@ -73,10 +112,11 @@ http://194.233.88.134:3005/
 Selain itu, faktor curricular units dan tuition fees juga cukup berpengaruh pada tingkat kelulusan siswa.
 
 ### Rekomendasi Action Items
-
 Beberapa rekomendasi action items yang harus dilakukan institusi guna menyelesaikan permasalahan atau mencapai target mereka.
-
-Memberikan bimbingan dan dukungan tambahan kepada siswa penerima beasiswa untuk membantu mereka mengatasi tantangan akademik dan non-akademik.
-Meninjau kembali kurikulum yang ada untuk memastikan bahwa apakah masih relevan, menantang, dan sesuai dengan kebutuhan siswa.
-Menyediakan tutor atau mentor, kelas remedial, bimbingan akademik, dan dukungan psikologis bagi siswa yang membutuhkannya.
-Mengembangkan program pendidikan / kelas alternatif yang dapat menjangkau siswa yang mungkin kesulitan menghadiri kelas pada waktu reguler, seperti program jarak jauh.
+1. Tingkatkan program remedial dan pendampingan akademik untuk mahasiswa dengan nilai rendah.
+2. Perluas akses beasiswa dan pastikan disertai pendampingan belajar.
+3. Sediakan opsi restrukturisasi pembayaran untuk mahasiswa yang memiliki tunggakan biaya.
+4. Luncurkan program orientasi dan mentoring khusus untuk mahasiswa baru usia muda (17–20 tahun).
+5. Evaluasi ulang sistem kelas malam (evening class), pertimbangkan opsi hybrid/online.
+6. Berikan dukungan sosial dan konseling bagi mahasiswa yang terdampak (displaced).
+7. Sediakan fasilitas adaptasi akademik dan bahasa bagi mahasiswa dari luar negeri.
