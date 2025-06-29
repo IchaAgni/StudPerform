@@ -58,7 +58,7 @@ Dashboard dibuat dengan menggunakan Google Looker Studio untuk menampilkan distr
 ```
 https://lookerstudio.google.com/s/oI1qGUNOcL0
 ```
-![ichaa_agni-dashboard](https://github.com/IchaAgni/StudPerform/blob/main/ichaa_agni-dashboard.jpg)
+![ichaa_agni-dashboard](https://github.com/IchaAgni/StudPerform/blob/main/ichaa_agni-dashboard.jpg?raw=true)
 
 ## Menjalankan Sistem Machine Learning
 *Prototype* Sistem *Machine Learning* ini dibuat dengan menggunakan **Streamlit** dan telah di-*deploy* secara online agar dapat diakses oleh siapa saja tanpa perlu menginstal aplikasi secara lokal. Berikut *link* atau *tautan*  untuk mengakses prototype sistem mchine lerning students-performance JJI (Jaya-Jaya Institute) :
